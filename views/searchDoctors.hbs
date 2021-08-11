@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Signup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/searchDoctors.css">
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <img src="../images/logo.png" style="height:100px; width:100px;" alt="brand-logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="searchDoctors">Search Doctors</a>
+          </li>
+          <li class="nav-item">
+            <form action="/auth/viewBookingsPat" method="POST">
+              <button class="nav-link link" style="border:none; background-color: inherit;">View Bookings</button>
+            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--end of Navigation bar-->
+      {{#if message}}
+           <div class="container"><h4 class='alert {{messageClass}} text-center mt-4'>{{message}}</h4></div>
+        {{/if}}
+  <header class="banner">
+    <h1 class="banner-text">Find Local</h1>
+    <h1 class="banner-text" id="doc-type">Doctors</h1>
+
+    <div class="col-md-4">
+
+      <form class="row g-3 needs-validation" action="/auth/searchDoctors" method="POST" input="mySignupValidator()" novalidate>
+
+        <div class="ms-4 col-md-8 mt-5">
+
+          <select class="form-select" data-live-search="true" id="specialization" name="specialization" required>
+            <option selected value="None">None</option>
+            <option>Ayurvedic Medicine</option>
+            <option>Anaesthesiology</option>
+            <option>Biochemistry</option>
+            <option>Community Health</option>
+            <option>Cardiology</option>
+            <option>Dentist</option>
+            <option>Dermatology</option>
+            <option>Emergency and Critical care</option>
+            <option>Endocrinology</option>
+            <option>ENT</option>
+            <option>Family Medicine</option>
+            <option>Forensic Medicine</option>
+            <option>Gastroenterology</option>
+            <option>General Medicine</option>
+            <option>General Surgery</option>
+            <option>Gynaecology</option>
+            <option>Haematology</option>
+            <option>Homeopathic Medicine</option>
+            <option>Microbiology</option>
+            <option>Obsetrics</option>
+            <option>Opthalmology</option>
+            <option>Orthopaedics</option>
+            <option>Paediatrics</option>
+            <option>Palliative Medicine</option>
+            <option>Pathology</option>
+            <option>Pulmonary</option>
+            <option>Skin and Venereal diseases</option>
+            <option>Pharmacology</option>
+            <option>Physical Medicine and Rehabilitation</option>
+            <option>Physiology</option>
+            <option>Preventive and Social Medicine</option>
+            <option>Psychiatry</option>
+            <option>Radio-Diagnosis</option>
+            <option>Tuberculosis and Respiratory diseases</option>
+            <option>Unani Medicine</option>
+            <option>Neurology</option>
+            <option>Nuclear Medicine</option>
+            <option>Transfusion Medicine</option>
+            <option>Tropical Medicine</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid Specialization.
+          </div>
+        </div>
+
+        <div class="col-md-3 ms-3 mt-5">
+          <button class="btn btn-warning" type="submit">Find</button>
+        </div>
+
+      </form>
+
+    </div>
+  </header>
+
+
+
+  <script src="../javascript/searchDoctors.js"></script>
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    --light-blue:#d6e5f3;
+    --dark-blue:rgb(0,35,75);
+    font-family:'Cabin', sans-serif;
+}
+
+.banner {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:84vh;
+    background-color:var(--light-blue);
+}
+
+.banner-text{
+    color:var(--dark-blue);
+    font-size:5rem;
+    font-weight: 900;
+}
