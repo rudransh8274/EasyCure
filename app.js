@@ -76,6 +76,6 @@ app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 
 
-app.listen(3050,()=>{
+app.listen(process.env.port || 3050,()=>{
     console.log("Server started at port 3050");
 });
