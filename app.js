@@ -75,7 +75,8 @@ db.connect((error)=>{
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 
+const PORT=process.env.PORT || 3000;
 
-app.listen(process.env.port || 3050,()=>{
-    console.log("Server started at port 3050");
+app.listen(PORT,()=>{
+    console.log(`Server started at port ${PORT}`);
 });
